@@ -1,9 +1,10 @@
 package com.devsuperior.dscatalog.entities;
 
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.stereotype.Repository;
 
-@Repository
+@Entity
+@Table(name = "category")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Repository;
 @EqualsAndHashCode()
 public class Category {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 }

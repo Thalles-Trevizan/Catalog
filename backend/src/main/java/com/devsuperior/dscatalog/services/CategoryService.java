@@ -13,7 +13,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -45,7 +44,7 @@ public class CategoryService {
     @Transactional
     public CategoryDTO update(Long id, CategoryDTO dto) {
         try {
-            Category category = repository.getOne(id);
+            Category category = repository.getReferenceById(id);
             category.setName(dto.getName());
             return new CategoryDTO(repository.save(category));
         } catch (EntityNotFoundException e) {

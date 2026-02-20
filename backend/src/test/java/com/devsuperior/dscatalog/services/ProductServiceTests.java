@@ -42,8 +42,8 @@ public class ProductServiceTests {
     private CategoryRepository categoryRepository;
 
     private final long EXISTING_ID = 1L;
-    private final long NON_EXISTING_ID = 1000L;
-    private final long DEPENDENT_ID = 1001L;
+    private final long NON_EXISTING_ID = 2L;
+    private final long DEPENDENT_ID = 3L;
 
     private final Product PRODUCT = Factory.createProduct();
     private final Category CATEGORY = Factory.createCategory();

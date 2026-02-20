@@ -74,6 +74,7 @@ public class ProductServiceTests {
 
         Assertions.assertNotNull(result);
         verify(productRepository, times(1)).getReferenceById(EXISTING_ID);
+        verify(productRepository, times(1)).save(any());
     }
 
     @Test

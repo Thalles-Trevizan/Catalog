@@ -5,7 +5,6 @@ import com.devsuperior.dscatalog.exceptions.DataBaseException;
 import com.devsuperior.dscatalog.exceptions.ResourceNotFoundException;
 import com.devsuperior.dscatalog.factories.Factory;
 import com.devsuperior.dscatalog.services.CategoryService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
@@ -40,13 +39,8 @@ public class CategoryControllerTests {
     private final Long NON_EXISTING_ID = 2L;
     private final long DEPENDENT_ID = 3L;
 
-    private final CategoryDTO CATEGORY_DTO = new CategoryDTO(Factory.createCategory());
+    private final CategoryDTO CATEGORY_DTO = Factory.createCategoryDTO();
     private final PageImpl<CategoryDTO> PAGE = new PageImpl<>(List.of(CATEGORY_DTO));
-
-    @BeforeEach
-    public void setup() {
-    }
-
 
     @Test
     public void findAllShouldReturnPage() throws Exception {
